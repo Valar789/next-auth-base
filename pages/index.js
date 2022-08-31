@@ -7,9 +7,10 @@ export default function Home() {
 
   useEffect(() => {
     //para obtener los datos de la sesion
-    (async () => {
+    (async () => {   
       const session = await getSession();
-      setuser(session.user);
+      session && setuser(session.user);
+      
     })();
   }, []);
 
